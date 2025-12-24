@@ -7,6 +7,10 @@ from collections import deque
 import random
 import numpy as np
 
+# TODO: add statistics and plots somehow for the results evaluation
+# TODO: create video outputs of every model running
+
+
 # ----- configuration and GPU parameters -----
 DEVICE = torch.device("mps" if torch.backends.mps.is_available() else "cpu")
 print(f"Using device: {DEVICE}")
@@ -19,7 +23,6 @@ EPS_DECAY = 0.9995
 TARGET_UPDATE = 10
 MEMORY_SIZE = 20000
 LR = 1e-4
-
 
 # ----- declaring the CNN architecture -----
 class TetrisDQN(torch.nn.Module):
